@@ -1,0 +1,25 @@
+node_modules/
+dist/
+release/
+*.log
+
+# Local credentials and machine-specific configuration
+.env
+.env.*
+!.env.example
+.npmrc
+*cookies*.txt
+*.pem
+*.key
+*.pfx
+*.p12
+
+# Downloaded third-party executables are release inputs, not source files
+tools/*.exe
+tools/ffmpeg/
+tools/yt-dlp/
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+Desktop.ini
