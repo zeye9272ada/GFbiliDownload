@@ -63,6 +63,13 @@
           "app-icon.ico",
           "app-icon.png"
         ]
+      },
+      {
+        "from": "tools",
+        "to": "tools",
+        "filter": [
+          "**/*"
+        ]
       }
     ],
     "win": {
@@ -76,7 +83,7 @@
           ]
         }
       ],
-      "artifactName": "${productName}-${version}-${arch}.${ext}"
+      "artifactName": "${productName}-easyuse-${version}-${arch}.${ext}"
     }
   }
 }

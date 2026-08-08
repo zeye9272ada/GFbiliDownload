@@ -52,7 +52,7 @@ tools/ffmpeg.exe
 tools/ffmpeg/bin/ffmpeg.exe
 ```
 
-这些第三方可执行文件不会提交到源码仓库。`main` 分支构建的应用可在首次运行时下载或手动选择它们；需要把本地已校验工具打入便携包时，请使用 [`easyuse` 分支](https://github.com/zeye9272ada/GFbiliDownload/tree/easyuse)。
+这些第三方可执行文件不会提交到源码仓库。`easyuse` 分支会在打包时读取本地 `tools/`；维护者可将经过完整性校验的工具放入该目录，再构建开箱即用的便携包。
 
 如果内容需要登录态，可以在“设置”页点击 Cookie 输入框右侧的登录按钮。应用会打开 B 站官方登录页，你可以扫码或输入账号登录。程序不会自建登录表单，也不会读取你的密码；检测到登录成功后，会把 B 站 Cookie 保存为：
 
@@ -70,13 +70,13 @@ Cookie 等同于登录凭证，请不要发给别人。如果退出登录、改�
 npm.cmd run dist
 ```
 
-`main` 分支生成不内置第三方工具的 Windows portable 单文件应用，产物名为：
+`easyuse` 分支生成可内置本地已校验工具的 Windows portable 单文件应用，产物名为：
 
 ```text
-release/孤帆下载器-0.1.0-x64.exe
+release/孤帆下载器-easyuse-0.1.0-x64.exe
 ```
 
-用户可在应用内获取或手动选择 `yt-dlp.exe` 和 `ffmpeg.exe`。需要把本地已校验工具一起打入 portable exe 时，请切换到 `easyuse` 分支。安装包应通过 GitHub Releases 发布，不应提交到源码仓库。
+如果本地 `tools/` 中存在通过完整性校验的 `yt-dlp.exe` 和 `ffmpeg.exe`，它们会被一起打入 portable exe；否则用户仍可在应用内获取或手动选择工具。安装包应通过 GitHub Releases 发布，不应提交到源码仓库。
 
 ## 常见问题
 
